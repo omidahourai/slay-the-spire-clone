@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://1brk6u464hvo"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_l1vsc"]
+[ext_resource type="PackedScene" uid="uid://uo8jlokflwhu" path="res://card_drawer.tscn" id="2_m4vju"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_l1vsc")
+
+[node name="CardDrawer" parent="." instance=ExtResource("2_m4vju")]
