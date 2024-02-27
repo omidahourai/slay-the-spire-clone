@@ -1,0 +1,35 @@
+[
+	{
+		"id": 1,
+		"name": "Strike",
+		"type": "attack",
+		"effects": [
+			"damage"
+		],
+		"description": "Deal [x] damage",
+		"value": 6,
+		"energy": 1
+	},
+	{
+		"id": 2,
+		"name": "Defend",
+		"type": "skill",
+		"effects": [
+			"block"
+		],
+		"description": "Deal [x] damage",
+		"value": 5,
+		"energy": 1
+	},
+	{
+		"id": 3,
+		"name": "Zap",
+		"type": "skill",
+		"effects": [
+			"channel"
+		],
+		"description": "Channel [x] lightning",
+		"value": 1,
+		"energy": 1
+	}
+]

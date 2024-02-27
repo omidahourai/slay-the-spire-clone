@@ -8,3 +8,4 @@ script = ExtResource("1_l1vsc")
 
 [node name="CardDrawer" parent="." instance=ExtResource("2_m4vju")]
 unique_name_in_owner = true
+metadata/_edit_group_ = true
