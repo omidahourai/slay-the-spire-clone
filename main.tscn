@@ -1,48 +1,49 @@
-[gd_scene load_steps=7 format=3 uid="uid://1brk6u464hvo"]
+[gd_scene load_steps=6 format=3 uid="uid://1brk6u464hvo"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_l1vsc"]
 [ext_resource type="PackedScene" uid="uid://uo8jlokflwhu" path="res://components/card_drawer/card_drawer.tscn" id="2_m4vju"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlvs1"]
-bg_color = Color(0, 0.117647, 0.658824, 1)
+[ext_resource type="Script" path="res://components/btn_card_draw/btn_card_draw.gd" id="2_y2bta"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyc7l"]
 bg_color = Color(0.0526311, 0.273507, 0.943212, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkab7"]
-
-[sub_resource type="GDScript" id="GDScript_dprki"]
-script/source = "extends Button
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlvs1"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0, 0.117647, 0.658824, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Main" type="Node"]
 script = ExtResource("1_l1vsc")
 
-[node name="CardDrawer" parent="." instance=ExtResource("2_m4vju")]
-unique_name_in_owner = true
-position = Vector2(0, 1390)
-metadata/_edit_group_ = true
-
-[node name="DrawCardButton" type="Button" parent="."]
-offset_left = 28.0
-offset_top = 1292.0
-offset_right = 172.0
-offset_bottom = 1369.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_wlvs1")
+[node name="BtnCardDraw" type="Button" parent="."]
+offset_left = 479.0
+offset_top = 624.0
+offset_right = 601.0
+offset_bottom = 647.0
 theme_override_styles/hover = SubResource("StyleBoxFlat_oyc7l")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_bkab7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wlvs1")
 action_mode = 0
 text = "Draw Card"
-script = SubResource("GDScript_dprki")
+script = ExtResource("2_y2bta")
 
-[connection signal="pressed" from="DrawCardButton" to="." method="_on_draw_card_button_pressed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+mouse_filter = 0
+alignment = 1
+
+[node name="CardDrawer" parent="HBoxContainer" instance=ExtResource("2_m4vju")]
+unique_name_in_owner = true
+metadata/_edit_group_ = true
+
+[connection signal="pressed" from="BtnCardDraw" to="BtnCardDraw" method="_on_pressed"]

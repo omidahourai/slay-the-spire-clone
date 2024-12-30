@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://bbedgj344hv3n"]
+
+[ext_resource type="Texture2D" uid="uid://bth6dg5igwfg8" path="res://images/Human/ATTACK/base_attack_strip10.png" id="1_v2u2w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6uej"]
+atlas = ExtResource("1_v2u2w")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1uo8"]
+atlas = ExtResource("1_v2u2w")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vp3ub"]
+atlas = ExtResource("1_v2u2w")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7jnu"]
+atlas = ExtResource("1_v2u2w")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84tef"]
+atlas = ExtResource("1_v2u2w")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pg6p"]
+atlas = ExtResource("1_v2u2w")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxeqx"]
+atlas = ExtResource("1_v2u2w")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf6es"]
+atlas = ExtResource("1_v2u2w")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbdmr"]
+atlas = ExtResource("1_v2u2w")
+region = Rect2(768, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2621x"]
+atlas = ExtResource("1_v2u2w")
+region = Rect2(864, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s46q0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6uej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1uo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vp3ub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7jnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84tef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pg6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxeqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf6es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbdmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2621x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s46q0")
+frame_progress = 0.459922

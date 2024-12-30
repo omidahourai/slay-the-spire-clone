@@ -19,7 +19,7 @@
 		],
 		"description": "Deal [x] damage",
 		"value": 5,
-		"energy": 1
+		"energy": 2
 	},
 	{
 		"id": 3,
@@ -30,6 +30,6 @@
 		],
 		"description": "Channel [x] lightning",
 		"value": 1,
-		"energy": 1
+		"energy": 3
 	}
 ]

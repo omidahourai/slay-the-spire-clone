@@ -1,10 +1,13 @@
+class_name Main
 extends Node
 
-var card_scene: PackedScene = load("res://components/card/card.tscn")
-var card_drawer: Node
-var deal_card_button: Node
+const Card := preload("res://components/card/card.tscn")
+const MAX_CARDS_IN_HAND: int = 10
 var cards_in_hand: Array = []
-var MAX_CARDS_IN_HAND: int = 10
+
+var card_drawer: Node
+var card_group: Node
+var btn_card_deal: Node
 
 var file = FileAccess.get_file_as_string("res://data/cards.json")
 var data = JSON.parse_string(file)
@@ -12,34 +15,25 @@ var data = JSON.parse_string(file)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	card_drawer = %CardDrawer
-	deal_card_button = %DrawCardButton
+	card_group = card_drawer.get_node("CanvasGroup")
+	btn_card_deal = %BtnDrawCard
 	deal_cards(randi_range(3,MAX_CARDS_IN_HAND))
 
-func deal_cards(count):
+func deal_cards(count: int):
 	for i in count:
-		draw_card(i)
+		draw_card()
 
-func draw_card(index):
-	var card = card_scene.instantiate()
-	card_drawer.add_child(card)
-	cards_in_hand.push_back(card)
-	var mod = floor(index/5)
-	
-	var card_data = data[randi_range(0,data.size()-1)]
-	card.get_node("Title").text = card_data.name
-	card.get_node("Description").text = card_data.description
-	card.get_node("Energy/EnergyLabel").text = str(card_data.energy)
-	var empty_card = card_drawer.get_node(str("%EmptyCard",index+1))
-	card.position.x = empty_card.position.x
-	card.position.y = empty_card.position.y
-
-func _on_draw_card_button_pressed():
+func draw_card():
 	var count = cards_in_hand.size()
-	print('pre-draw: ',count)
-	if (count < MAX_CARDS_IN_HAND):
-		draw_card(count)
-		count = cards_in_hand.size()
-		print('post-draw: ', count)
-	else:
+	if (count >= MAX_CARDS_IN_HAND):
 		print('Max cards already in hand.')
-	#pass # Replace with function body.
+		return
+	var card = Card.instantiate()
+	cards_in_hand.append(card)
+	var empty_card = card_drawer.get_node(str("%EmptyCard",count+1))
+	card._show({
+		disp = card_group,
+		data = data[randi_range(0,data.size()-1)],
+		x = empty_card.position.x,
+		y = empty_card.position.y
+	})
