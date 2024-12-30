@@ -2,12 +2,10 @@ class_name Card extends StaticBody2D
 
 var is_selected: bool
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	SignalBus.card_deselect.connect(_on_card_deselect)
 	$Highlight.visible = false
 	is_selected = false
-	pass # Replace with function body.
 
 func _show(params = {}):
 	var data = params.data
@@ -33,4 +31,3 @@ func select(is_select: bool, deselect_all: bool = true):
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and Input.is_action_pressed("click"):
 		select(!is_selected)
-	pass # Replace with function body.

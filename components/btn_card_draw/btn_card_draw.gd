@@ -1,4 +1,4 @@
-extends Button
+class_name BtnCardDraw extends Node
 
 var scene: Node
 

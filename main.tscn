@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://1brk6u464hvo"]
+[gd_scene load_steps=7 format=3 uid="uid://1brk6u464hvo"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_l1vsc"]
 [ext_resource type="PackedScene" uid="uid://uo8jlokflwhu" path="res://components/card_drawer/card_drawer.tscn" id="2_m4vju"]
 [ext_resource type="Script" path="res://components/btn_card_draw/btn_card_draw.gd" id="2_y2bta"]
+[ext_resource type="Script" path="res://scripts/AnimationComponent.gd" id="4_h6ma0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyc7l"]
 bg_color = Color(0.0526311, 0.273507, 0.943212, 1)
@@ -30,6 +31,10 @@ action_mode = 0
 text = "Draw Card"
 script = ExtResource("2_y2bta")
 
+[node name="AnimationComponent" type="Node" parent="BtnCardDraw"]
+script = ExtResource("4_h6ma0")
+hover_scale = Vector2(2, 2)
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
@@ -38,12 +43,19 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-size_flags_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
 mouse_filter = 0
 alignment = 1
 
 [node name="CardDrawer" parent="HBoxContainer" instance=ExtResource("2_m4vju")]
 unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
 metadata/_edit_group_ = true
+
+[node name="AnimationComponent" type="Node" parent="HBoxContainer/CardDrawer"]
+script = ExtResource("4_h6ma0")
+hover_scale = Vector2(2, 2)
 
 [connection signal="pressed" from="BtnCardDraw" to="BtnCardDraw" method="_on_pressed"]
