@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfbi6fkhv1gfw"]
+[gd_scene load_steps=6 format=3 uid="uid://bfbi6fkhv1gfw"]
 
 [ext_resource type="Script" path="res://components/card/card.gd" id="1_vijrn"]
+[ext_resource type="FontFile" uid="uid://ktfnuh8jn352" path="res://components/card/kenvector_future.ttf" id="2_fy01q"]
+[ext_resource type="FontFile" uid="uid://e6fr8pmj67ii" path="res://fonts/origami-mommy.regular.ttf" id="2_n1ll1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fx36j"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -33,10 +35,12 @@ mouse_filter = 2
 color = Color(0.815686, 0.815686, 0.815686, 1)
 
 [node name="Description" type="Label" parent="."]
+offset_left = 13.0
 offset_top = 150.0
-offset_right = 200.0
+offset_right = 187.0
 offset_bottom = 231.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_fy01q")
 theme_override_font_sizes/font_size = 12
 text = "Description of what this card does card goes here."
 horizontal_alignment = 1
@@ -53,6 +57,7 @@ offset_bottom = 27.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_fy01q")
 theme_override_font_sizes/font_size = 18
 text = "Title"
 horizontal_alignment = 1
@@ -84,10 +89,12 @@ offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_n1ll1")
 theme_override_font_sizes/font_size = 18
 text = "0"
 horizontal_alignment = 1
+vertical_alignment = 1
+visible_ratio = -1.0
 
 [node name="Highlight" type="Panel" parent="."]
 anchors_preset = 8
