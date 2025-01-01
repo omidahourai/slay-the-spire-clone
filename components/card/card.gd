@@ -2,10 +2,17 @@ class_name Card extends StaticBody2D
 
 var is_selected: bool
 
+var thumbs = [
+	preload("res://images/Card/card_thumb_sword.png"),
+	preload("res://images/Card/card_thumb_shield.png"),
+	preload("res://images/Card/card_thumb_bolt.png")
+]
+
 func _ready():
 	SignalBus.card_deselect.connect(_on_card_deselect)
 	$Highlight.visible = false
 	is_selected = false
+	#connect("input_event", _input_event)
 
 func _show(params = {}):
 	var data = params.data
@@ -13,10 +20,10 @@ func _show(params = {}):
 	self.get_node("Title").text = data.name
 	self.get_node("Description").text = data.description
 	self.get_node("EnergyLabel").text = str(data.energy)
+	self.get_node("Thumbnail").texture = thumbs[data.id-1]
 	disp.add_child(self)
 	position.x = params.x
 	position.y = params.y
-	print('showing ',position.x,position.y)
 	super.show()
 	
 func _on_card_deselect():

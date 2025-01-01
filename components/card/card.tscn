@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfbi6fkhv1gfw"]
+[gd_scene load_steps=9 format=3 uid="uid://bfbi6fkhv1gfw"]
 
 [ext_resource type="Script" path="res://components/card/card.gd" id="1_vijrn"]
 [ext_resource type="FontFile" uid="uid://ktfnuh8jn352" path="res://components/card/kenvector_future.ttf" id="2_fy01q"]
-[ext_resource type="FontFile" uid="uid://e6fr8pmj67ii" path="res://fonts/origami-mommy.regular.ttf" id="2_n1ll1"]
+[ext_resource type="Texture2D" uid="uid://cagfcobip5c73" path="res://images/Card/card_thumb_shield.png" id="2_teub2"]
+[ext_resource type="LabelSettings" uid="uid://v7y3fagm2eao" path="res://components/card/font-pixelify.tres" id="3_2oy8q"]
+[ext_resource type="FontFile" uid="uid://2fy6duxj05y0" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="3_vb0ar"]
+
+[sub_resource type="Theme" id="Theme_83nrn"]
+default_font = ExtResource("3_vb0ar")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fx36j"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -26,13 +31,18 @@ offset_right = 200.0
 offset_bottom = 250.0
 mouse_filter = 2
 
-[node name="Thumbnail" type="ColorRect" parent="."]
+[node name="ThumbnailBkgr" type="ColorRect" parent="."]
 offset_left = 10.0
 offset_top = 28.0
 offset_right = 190.0
 offset_bottom = 148.0
 mouse_filter = 2
 color = Color(0.815686, 0.815686, 0.815686, 1)
+
+[node name="Thumbnail" type="Sprite2D" parent="."]
+position = Vector2(100, 86)
+scale = Vector2(4, 4)
+texture = ExtResource("2_teub2")
 
 [node name="Description" type="Label" parent="."]
 offset_left = 13.0
@@ -43,6 +53,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fy01q")
 theme_override_font_sizes/font_size = 12
 text = "Description of what this card does card goes here."
+label_settings = ExtResource("3_2oy8q")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -56,10 +67,9 @@ offset_right = 200.0
 offset_bottom = 27.0
 grow_horizontal = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_fy01q")
 theme_override_font_sizes/font_size = 18
 text = "Title"
+label_settings = ExtResource("3_2oy8q")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -88,13 +98,12 @@ offset_right = 32.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_83nrn")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_n1ll1")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 20
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_ratio = -1.0
 
 [node name="Highlight" type="Panel" parent="."]
 anchors_preset = 8

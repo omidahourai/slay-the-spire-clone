@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://v7y3fagm2eao"]
+
+[ext_resource type="FontFile" uid="uid://2fy6duxj05y0" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="1_4n1ij"]
+
+[resource]
+resource_name = "pixelify"
+line_spacing = -3.0
+font = ExtResource("1_4n1ij")
+font_size = 18
+font_color = Color(0, 0, 0, 1)
