@@ -32,7 +32,7 @@ func draw_card():
 	cards_in_hand.append(card)
 	var empty_card = card_drawer.get_node(str("%EmptyCard",count+1))
 	card._show({
-		disp = card_group,
+		disp = card_drawer,
 		data = data[randi_range(0,data.size()-1)],
 		x = empty_card.position.x,
 		y = empty_card.position.y

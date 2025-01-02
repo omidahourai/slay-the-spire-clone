@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://xy46dsc082i0"]
+
+[ext_resource type="Texture2D" uid="uid://dmpb451epawc4" path="res://images/icon_card_stack.png" id="1_itv6l"]
+[ext_resource type="Texture2D" uid="uid://104ip2sctxiq" path="res://images/item_slot_empty.png" id="2_8px2v"]
+[ext_resource type="Script" path="res://components/btn_card_draw/btn_card_draw.gd" id="3_wy1bk"]
+[ext_resource type="Script" path="res://scripts/AnimationComponent.gd" id="4_rvt4j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04myr"]
+bg_color = Color(0.0526311, 0.273507, 0.943212, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wv6xc"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0, 0.117647, 0.658824, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="CardBar" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -540.0
+offset_top = -100.0
+offset_right = 540.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.226707, 0.226707, 0.226707, 1)
+
+[node name="CardDeckDraw" type="Sprite2D" parent="."]
+position = Vector2(-473.333, -50)
+scale = Vector2(4, 4)
+texture = ExtResource("1_itv6l")
+
+[node name="CardDeckBurn" type="Sprite2D" parent="."]
+position = Vector2(460, -50)
+scale = Vector2(4, 4)
+texture = ExtResource("1_itv6l")
+
+[node name="ItemSlot1" type="Sprite2D" parent="."]
+position = Vector2(-120, -51.6667)
+scale = Vector2(4, 4)
+texture = ExtResource("2_8px2v")
+
+[node name="ItemSlot2" type="Sprite2D" parent="."]
+position = Vector2(-23.3335, -51.6666)
+scale = Vector2(4, 4)
+texture = ExtResource("2_8px2v")
+
+[node name="ItemSlot3" type="Sprite2D" parent="."]
+position = Vector2(73.3333, -51.6666)
+scale = Vector2(4, 4)
+texture = ExtResource("2_8px2v")
+
+[node name="BtnCardDraw" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -415.0
+offset_top = -73.0
+offset_right = -293.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_04myr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wv6xc")
+action_mode = 0
+text = "Draw Card"
+script = ExtResource("3_wy1bk")
+
+[node name="AnimationComponent" type="Node" parent="BtnCardDraw"]
+script = ExtResource("4_rvt4j")
+hover_scale = Vector2(2, 2)
+
+[connection signal="pressed" from="BtnCardDraw" to="BtnCardDraw" method="_on_pressed"]

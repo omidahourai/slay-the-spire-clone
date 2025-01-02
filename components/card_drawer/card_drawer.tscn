@@ -9,11 +9,8 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.6, 0.6)
-size_flags_horizontal = 0
-size_flags_vertical = 8
 
-[node name="Background" type="Panel" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -26,67 +23,64 @@ offset_right = 540.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
+color = Color(0.226707, 0.226707, 0.226707, 1)
 
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
-position = Vector2(-540, -530)
-metadata/_edit_group_ = true
-
-[node name="EmptyCard1" type="Polygon2D" parent="CanvasGroup"]
+[node name="EmptyCard1" type="Polygon2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(21, 10)
+position = Vector2(-519, -520)
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 polygon = PackedVector2Array(-2.08165e-12, -2.08165e-12, 200, 2.08165e-12, 200, 250, 2.08165e-12, 250)
 
-[node name="EmptyCard2" type="Polygon2D" parent="CanvasGroup"]
+[node name="EmptyCard2" type="Polygon2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(230, 10)
+position = Vector2(-310, -520)
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 polygon = PackedVector2Array(-2.08165e-12, -2.08165e-12, 200, 2.08165e-12, 200, 250, 2.08165e-12, 250)
 
-[node name="EmptyCard3" type="Polygon2D" parent="CanvasGroup"]
+[node name="EmptyCard3" type="Polygon2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(440, 10)
+position = Vector2(-100, -520)
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 polygon = PackedVector2Array(-2.08165e-12, -2.08165e-12, 200, 2.08165e-12, 200, 250, 2.08165e-12, 250)
 
-[node name="EmptyCard4" type="Polygon2D" parent="CanvasGroup"]
+[node name="EmptyCard4" type="Polygon2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(650, 10)
+position = Vector2(110, -520)
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 polygon = PackedVector2Array(-2.08165e-12, -2.08165e-12, 200, 2.08165e-12, 200, 250, 2.08165e-12, 250)
 
-[node name="EmptyCard5" type="Polygon2D" parent="CanvasGroup"]
+[node name="EmptyCard5" type="Polygon2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(860, 10)
+position = Vector2(320, -520)
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 polygon = PackedVector2Array(-2.08165e-12, -2.08165e-12, 200, 2.08165e-12, 200, 250, 2.08165e-12, 250)
 
-[node name="EmptyCard6" type="Polygon2D" parent="CanvasGroup"]
+[node name="EmptyCard6" type="Polygon2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(20, 270)
+position = Vector2(-520, -260)
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 polygon = PackedVector2Array(-2.08165e-12, -2.08165e-12, 200, 2.08165e-12, 200, 250, 2.08165e-12, 250)
 
-[node name="EmptyCard7" type="Polygon2D" parent="CanvasGroup"]
+[node name="EmptyCard7" type="Polygon2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(230, 270)
+position = Vector2(-310, -260)
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 polygon = PackedVector2Array(-2.08165e-12, -2.08165e-12, 200, 2.08165e-12, 200, 250, 2.08165e-12, 250)
 
-[node name="EmptyCard8" type="Polygon2D" parent="CanvasGroup"]
+[node name="EmptyCard8" type="Polygon2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(440, 270)
+position = Vector2(-100, -260)
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 polygon = PackedVector2Array(-2.08165e-12, -2.08165e-12, 200, 2.08165e-12, 200, 250, 2.08165e-12, 250)
 
-[node name="EmptyCard9" type="Polygon2D" parent="CanvasGroup"]
+[node name="EmptyCard9" type="Polygon2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(650, 270)
+position = Vector2(110, -260)
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 polygon = PackedVector2Array(-2.08165e-12, -2.08165e-12, 200, 2.08165e-12, 200, 250, 2.08165e-12, 250)
 
-[node name="EmptyCard10" type="Polygon2D" parent="CanvasGroup"]
+[node name="EmptyCard10" type="Polygon2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(860, 270)
+position = Vector2(320, -260)
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 polygon = PackedVector2Array(-2.08165e-12, -2.08165e-12, 200, 2.08165e-12, 200, 250, 2.08165e-12, 250)

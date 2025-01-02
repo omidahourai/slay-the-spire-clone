@@ -4,10 +4,7 @@ var scene: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	scene = self.get_owner()
-	print(scene)
-	print(scene.cards_in_hand)
-	
+	scene = get_owner().get_owner()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

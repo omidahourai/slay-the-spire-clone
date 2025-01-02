@@ -1,66 +1,58 @@
-[gd_scene load_steps=7 format=3 uid="uid://1brk6u464hvo"]
+[gd_scene load_steps=4 format=3 uid="uid://1brk6u464hvo"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_l1vsc"]
 [ext_resource type="PackedScene" uid="uid://uo8jlokflwhu" path="res://components/card_drawer/card_drawer.tscn" id="2_m4vju"]
-[ext_resource type="Script" path="res://components/btn_card_draw/btn_card_draw.gd" id="2_y2bta"]
-[ext_resource type="Script" path="res://scripts/AnimationComponent.gd" id="4_h6ma0"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyc7l"]
-bg_color = Color(0.0526311, 0.273507, 0.943212, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlvs1"]
-content_margin_left = 20.0
-content_margin_right = 20.0
-bg_color = Color(0, 0.117647, 0.658824, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[ext_resource type="PackedScene" uid="uid://xy46dsc082i0" path="res://components/card_bar/card_bar.tscn" id="4_r84i1"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_l1vsc")
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -634.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer"]
+layout_mode = 2
+color = Color(0.227451, 0.227451, 0.227451, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -628.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -540.0
-offset_top = -530.0
-offset_right = 540.0
+offset_top = -12.0
 grow_horizontal = 2
 grow_vertical = 0
-size_flags_horizontal = 4
-size_flags_vertical = 8
-mouse_filter = 2
-alignment = 1
+size_flags_vertical = 10
 
-[node name="CardDrawer" parent="CanvasLayer/HBoxContainer" instance=ExtResource("2_m4vju")]
+[node name="CardDrawer" parent="." instance=ExtResource("2_m4vju")]
 unique_name_in_owner = true
-layout_mode = 2
+offset_top = -100.0
+offset_bottom = -100.0
+size_flags_vertical = 8
 mouse_filter = 2
 metadata/_edit_group_ = true
 
-[node name="AnimationComponent" type="Node" parent="CanvasLayer/HBoxContainer/CardDrawer"]
-script = ExtResource("4_h6ma0")
-hover_scale = Vector2(2, 2)
-
-[node name="BtnCardDraw" type="Button" parent="CanvasLayer"]
-offset_left = 278.0
-offset_top = 563.0
-offset_right = 400.0
-offset_bottom = 586.0
-theme_override_styles/hover = SubResource("StyleBoxFlat_oyc7l")
-theme_override_styles/normal = SubResource("StyleBoxFlat_wlvs1")
-action_mode = 0
-text = "Draw Card"
-script = ExtResource("2_y2bta")
-
-[node name="AnimationComponent" type="Node" parent="CanvasLayer/BtnCardDraw"]
-script = ExtResource("4_h6ma0")
-hover_scale = Vector2(2, 2)
-
-[connection signal="pressed" from="CanvasLayer/BtnCardDraw" to="CanvasLayer/BtnCardDraw" method="_on_pressed"]
+[node name="CardBar" parent="." instance=ExtResource("4_r84i1")]
+size_flags_horizontal = 1
+size_flags_vertical = 10
+mouse_filter = 2
